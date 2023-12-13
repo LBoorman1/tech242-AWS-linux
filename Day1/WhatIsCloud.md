@@ -30,7 +30,7 @@ Cloud computing refers to the delivery of computing services—including servers
 - community cloud - several organisations
 
 ## Cloud services
- - infrastructre as a service
+ - infrastructre as a service - allows for customisation at the operating system level.
  - platform as a service
  - software as a service
  - function as a service

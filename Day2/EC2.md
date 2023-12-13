@@ -38,3 +38,6 @@ Search for 20230424 choose the one with code ami-0a7493ba2bc35c1e9
 9. ssh into the vm using the .pem credentials.
 
 ![Alt text](screenshots/launch.png)
+<br>
+
+![Alt text](screenshots/EC2Diagram.jpg)
