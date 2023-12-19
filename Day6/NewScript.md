@@ -51,3 +51,5 @@ fi
 
 sudo systemctl reload apache2
 ```
+
+Allows the configuration of the reverse proxy. Still doesn't work in a new AMI for some reason.
