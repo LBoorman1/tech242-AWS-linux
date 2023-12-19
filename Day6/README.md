@@ -6,3 +6,5 @@ I had some issues on friday with configuring the reverse proxy, I think it had s
 I have changed the script so that the apache reverse proxy is configured before starting the maven build. This allows the apache server to be configured before hand and gives it time to
 allow the proxy to be set up.
 
+## The newest version of the script
+[New Script](NewScript.md)
