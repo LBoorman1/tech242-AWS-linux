@@ -1,5 +1,5 @@
 # Script for the database vm
-
+needs security group ssh my ip and MySQL on port 3306
 ```
 #!/bin/bash
 
@@ -16,9 +16,6 @@ sudo apt-get update
 #install mysql
 sudo DEBIAN_FRONTEND=noninteractive apt install -y mysql-server
 
-
-#This might ask for a username and password 
-
 #Enable MySQL server
 sudo systemctl enable mysql
 
@@ -31,6 +28,8 @@ sudo systemctl restart mysql
 wget https://raw.githubusercontent.com/LBoorman1/tech242-luke-world-repository/main/world.sql
 
 #Run the SQL script
-sudo mysql -u root -p root < world.sql
+sudo mysql -u root -proot < world.sql
 
+#Creates the root user that can be accessed from anywhere
+sudo mysql -u root -proot -e "CREATE USER IF NOT EXISTS 'root'@'%' IDENTIFIED BY 'root'; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION; FLUSH PRIVILEGES;"
 ```

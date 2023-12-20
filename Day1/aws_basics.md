@@ -32,7 +32,12 @@
 Has locations around the globe, allowing for fast access times no matter the user's location.
 
 ## Points of Presence
-Optimise performance, reduce latency and enchance the availability of AWs services for end-users.
+Optimise performance, reduce latency and enchance the availability of AWs services for end-users. 
+Strategically placed in cities and places where there is a high amount of traffic to allow for reliable service to
+common locations.
 
 ### Edge locations
-Distributed in major cities strategically.
+Distributed in major cities strategically. Allow for people to connect to cloud services from the nearest 
+
+### Availability Zones
+Areas in which there are one or more aws data centers for a region.

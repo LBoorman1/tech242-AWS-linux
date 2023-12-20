@@ -59,3 +59,6 @@ This script allows the server to use apache to configure a reverse-proxy so that
 users visit the given ip address, they are redirected to the port 5000.
 
 The script also gets the public Ip address of the instance by using `$(curl ifconfig.me)`
+
+There are to ways to configure the reverse proxy file. In this script, the whole file is overwritten. This is not ideal
+as some lines that are in the file may be necessary and we just want to add lines. Another way is to use the sed command, this is covered in day6 under newscript.md

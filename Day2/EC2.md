@@ -36,8 +36,14 @@ Search for 20230424 choose the one with code ami-0a7493ba2bc35c1e9
 7. Pick the AMI listed above
 8. change permissions of the .pem file
 9. ssh into the vm using the .pem credentials.
+   1.  `ssh ".ssh/tech242.pem" user@host`
 
-![Alt text](screenshots/launch.png)
 <br>
 
-![Alt text](screenshots/EC2Diagram.jpg)
+![Connect](screenshots/connect.png)
+<br>
+
+![launch](screenshots/launch.png)
+<br>
+
+![EC2Diagram](screenshots/EC2Diagram.jpg)

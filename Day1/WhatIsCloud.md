@@ -31,10 +31,8 @@ Cloud computing refers to the delivery of computing services—including servers
 
 ## Cloud services
  - infrastructre as a service - allows for customisation at the operating system level.
- - platform as a service
- - software as a service
- - function as a service
- - container as a service
+ - platform as a service - does not allow customisation of infrastructure, provides tools for development
+ - software as a service - provides a completed piece of software, hosted on the cloud.
 
 ## Advantages of cloud
 - cost saving
@@ -55,7 +53,7 @@ Operational expenditure Vs Capital expenditure
 - CapEx is the upfront cost of cloud services
 
 ## Market Share 
-expected to grow to $57.9B by 2030
+![market-share](readme-images/market-share.png)
 
 ## Largest Providers
 - AWS
