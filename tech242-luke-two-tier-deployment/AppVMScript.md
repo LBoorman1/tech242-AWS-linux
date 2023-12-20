@@ -1,27 +1,32 @@
 # App VM Script
+```
+#!/bin/bash
 
+#Update and upgrade
 sudo DEBIAN_FRONTEND=noninteractive apt update -y
 sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y
 
+#Install relevant packages
 sudo DEBIAN_FRONTEND=noninteractive apt install mysql-client -y
 sudo DEBIAN_FRONTEND=noninteractive apt install maven -y
 sudo DEBIAN_FRONTEND=noninteractive apt install openjdk-17-jdk -y
-
 sudo DEBIAN_FRONTEND=noninteractive apt install git -y
 
+#Fresh clone of the repo
 cd ~
 rm -rf repo
-
 git clone https://github.com/LBoorman1/tech242-luke-world-repository.git ~/repo
 
 cd repo/WorldProject
 
+#Set environment variables
 export DB_HOST=jdbc:mysql://172.31.61.145:3306/world
 export DB_USER=root
 export DB_PASS=root
 
-output=$(mysql -h 172.31.54.27 -u root -proot -e "USE world; SELECT 1" 2>&1)
 
+#Check mySQL connection and if successful, run the app
+output=$(mysql -h 172.31.54.27 -u root -proot -e "USE world; SELECT 1" 2>&1)
 if [ $? -eq 0 ]; then
     echo "Connected Successfully"
     mvn clean package spring-boot:start
@@ -30,6 +35,7 @@ else
     echo $output
 fi
 
+#Setting up the reverse proxy
 sudo DEBIAN_FRONTEND=noninteractive apt install -y apache2
 
 sudo systemctl enable apache2
@@ -53,4 +59,7 @@ if ! grep -q "ProxyPreserveHost On" "$config_file"; then
 fi
 
 sudo systemctl reload apache2
+```
 
+The if statement here allows the `mysql -h` command to provide an exit status of 0 if successful, therefore
+the script can check if there is an appropriate database connection.
