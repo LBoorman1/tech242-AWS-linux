@@ -17,16 +17,18 @@ cd ~
 rm -rf repo
 git clone https://github.com/LBoorman1/tech242-luke-world-repository.git ~/repo
 
+db_ip=
+
 cd repo/WorldProject
 
 #Set environment variables
-export DB_HOST=jdbc:mysql://172.31.61.145:3306/world
+export DB_HOST=jdbc:mysql://$db_ip:3306/world
 export DB_USER=root
 export DB_PASS=root
 
 
 #Check mySQL connection and if successful, run the app
-output=$(mysql -h 172.31.54.27 -u root -proot -e "USE world; SELECT 1" 2>&1)
+output=$(mysql -h $db_ip -u root -proot -e "USE world; SELECT 1" 2>&1)
 if [ $? -eq 0 ]; then
     echo "Connected Successfully"
     mvn clean package spring-boot:start
