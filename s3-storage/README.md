@@ -29,3 +29,21 @@ aws s3 rm s3://(bucket-name) --recursive -- remove all files in bucket
 aws s3 rb s3://(bucket-name) -- delete the bucket
 
 [Script for changing home.html](script.md)
+
+[Script for reverting the changes](revert-script.md)
+
+```
+aws s3 mb s3://tech242-luke-new-bucket
+
+aws s3api put-public-access-block --bucket tech242-luke-new-bucket --public-access-block-configuration BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false
+
+aws s3api put-bucket-ownership-controls \
+ --bucket tech242-luke-new-bucket \
+ --ownership-controls {
+    "Rules": [
+        {
+            "ObjectOwnership":BucketOwnerPreferred"
+        }
+    ]
+ }
+```
